@@ -10,6 +10,7 @@ namespace CslAppOperator
     {
         static void Main(string[] args)
         {
+            //Operator
         }
     }
 }
