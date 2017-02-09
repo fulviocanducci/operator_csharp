@@ -20,25 +20,34 @@ namespace CslAppOperator
         public int X { get; set; }
         public int Y { get; set; }
 
+        //Faz a soma
         public static SubSystem operator +(SubSystem a, SubSystem b)
             => new SubSystem(a.X + b.X, a.Y + b.Y);
 
+        //Faz a subtração 
         public static SubSystem operator -(SubSystem a, SubSystem b)
             => new SubSystem(a.X - b.X, a.Y - b.Y);
 
+        //Faz a divisão e pega somente a parte de inteiros
         public static SubSystem operator /(SubSystem a, SubSystem b)
             => new SubSystem((a.X / b.X), (a.Y / b.Y));
 
+        //Verifica se são iguais
         public static bool operator ==(SubSystem a, SubSystem b)
             => a.X == b.X && a.Y == b.Y;
+
+        //Verifica se são diferentes
         public static bool operator !=(SubSystem a, SubSystem b)
             => a.X != b.X || a.Y != b.Y;
 
+        //Multiplica
         public static SubSystem operator *(SubSystem a, SubSystem b)
             => new SubSystem(a.X * b.X, a.Y * b.Y);
 
+        //Convert to Type Defined
         public static explicit operator Key(SubSystem a)
             => new Key {  X = a.X, Y = a.Y};
+
 
         public static implicit operator bool(SubSystem a)
             => a.X > 0 && a.Y > 0;
