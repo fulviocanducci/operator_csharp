@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CslAppOperator
+﻿namespace CslAppOperator
 {
     public class SubSystem
     {
@@ -30,21 +24,13 @@ namespace CslAppOperator
 
         //Faz a divisão e pega somente a parte de inteiros
         public static SubSystem operator /(SubSystem a, SubSystem b)
-            => new SubSystem((a.X / b.X), (a.Y / b.Y));
-
-        //Verifica se são iguais
-        public static bool operator ==(SubSystem a, SubSystem b)
-            => a.X == b.X && a.Y == b.Y;
-
-        //Verifica se são diferentes
-        public static bool operator !=(SubSystem a, SubSystem b)
-            => a.X != b.X || a.Y != b.Y;
+            => new SubSystem((a.X / b.X), (a.Y / b.Y));                 
 
         //Multiplica
         public static SubSystem operator *(SubSystem a, SubSystem b)
             => new SubSystem(a.X * b.X, a.Y * b.Y);
 
-        //Convert to Type Defined
+        //Convert para o outro tipo de forma explicita
         public static explicit operator Key(SubSystem a)
             => new Key {  X = a.X, Y = a.Y};
 
